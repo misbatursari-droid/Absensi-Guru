@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Guru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="logo.png" class="logo">
+
+<h1>ABSENSI GURU</h1>
+<h2>MI BATURSARI 02</h2>
+
+<p>Selamat Datang</p>
+<h2><span id="namaGuru">Guru</span></h2>
+
+<button onclick="absenMasuk()">ABSEN MASUK</button>
+
+<button onclick="absenPulang()">ABSEN PULANG</button>
+
+<button onclick="izin()">IZIN</button>
+
+<button onclick="sakit()">SAKIT</button>
+
+<button onclick="exportExcel()">EXPORT EXCEL</button>
+
+<button onclick="exportPDF()">EXPORT PDF</button>
+
+<button onclick="logout()">LOGOUT</button>
+
+<button>EXPORT EXCEL</button>
+
+<button>EXPORT PDF</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+let nama = localStorage.getItem("namaGuru");
+
+if(nama){
+  document.getElementById("namaGuru").innerHTML = nama;
+}
+
+</script>
+</body>
+</html>
