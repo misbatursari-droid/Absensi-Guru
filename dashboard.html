@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html>
 <head>
     <title>Dashboard Guru</title>
     <link rel="stylesheet" href="style.css">
@@ -11,43 +9,65 @@
 
 <div class="container">
 
-<img src="logo.png" class="logo">
+    <img src="logo.png" class="logo">
 
-<h1>ABSENSI GURU</h1>
-<h2>MI BATURSARI 02</h2>
+    <h1>ABSENSI GURU</h1>
+    <h2>MI BATURSARI 02</h2>
 
-<p>Selamat Datang</p>
-<h2><span id="namaGuru">Guru</span></h2>
+    <p>Selamat Datang</p>
+    <h2><span id="namaGuru">Guru</span></h2>
 
-<button onclick="absenMasuk()">ABSEN MASUK</button>
+<div class="status">
+🟢 Sistem Absensi Online
+</div>
 
-<button onclick="absenPulang()">ABSEN PULANG</button>
+<div class="jam" id="jam"></div>
 
-<button onclick="izin()">IZIN</button>
+    <button onclick="absenMasuk()">ABSEN MASUK</button>
 
-<button onclick="sakit()">SAKIT</button>
+    <button onclick="absenPulang()">ABSEN PULANG</button>
 
-<button onclick="exportExcel()">EXPORT EXCEL</button>
+    <button onclick="izin()">IZIN</button>
 
-<button onclick="exportPDF()">EXPORT PDF</button>
+    <button onclick="sakit()">SAKIT</button>
 
-<button onclick="logout()">LOGOUT</button>
+    <button onclick="exportExcel()">EXPORT EXCEL</button>
 
-<button>EXPORT EXCEL</button>
+    <button onclick="exportPDF()">EXPORT PDF</button>
 
-<button>EXPORT PDF</button>
+    <button onclick="logout()">LOGOUT</button>
+
 </div>
 
 <script src="script.js"></script>
 
 <script>
-
 let nama = localStorage.getItem("namaGuru");
 
-if(nama){
-  document.getElementById("namaGuru").innerHTML = nama;
+if (nama) {
+    document.getElementById("namaGuru").innerHTML = nama;
+}
+</script>
+
+<script>
+
+function tampilJam(){
+
+let sekarang = new Date();
+
+document.getElementById("jam").innerHTML =
+sekarang.toLocaleDateString("id-ID") +
+"<br>" +
+sekarang.toLocaleTimeString("id-ID");
+
 }
 
+setInterval(tampilJam,1000);
+
+tampilJam();
+
 </script>
+
+
 </body>
 </html>
